@@ -1,0 +1,231 @@
+@import '../styles/reset.scss';
+@import '../styles/variables.scss';
+
+.landing {
+    background-color: $dark;
+}
+.land-header {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $dark;
+    color: $white;
+}
+.land-contHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+.land-contHeader__oneSection{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+gap: 1rem;
+}
+.land-iconComputer{
+    width: 3rem;
+    height: 3rem;
+}
+.land-text{
+    font-size: 1.4rem;
+    font: $font-style;
+}
+.land-logoCool{
+    width: 4rem;
+    height: 4rem;
+}
+
+
+.land-header__title{
+    font: $font-style-2;
+    font-size: 4rem;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.land-header__subtitle{
+    font: $font-style;
+    font-size: 1.8rem;
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+.land-header__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+.land-btnNew{
+    display: block;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: .5rem;
+}
+.btnNewTxt{
+    text-decoration: none;
+    font-size: 1rem;
+}
+.land-btnSee{
+    display: block;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: .5rem;
+    background-color:$dark-lilac;
+}
+.btnSeeTxt{
+    text-decoration: none;
+    color:$white;
+    font-size: 1rem;
+}
+
+.land-main{
+    padding: 2rem;
+    background-color: $dark;
+}
+
+
+
+.trashLi{
+    width: 3rem;
+    height: 3rem;
+  }
+
+.land-autor{
+    background-color: $white;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    padding: .8rem;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+}
+
+.land-info-project{
+width: 60%;
+
+}
+.land-subtitle{
+    font: $font-style;
+    color: $dark;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.land-title-preview{
+    font: $font-style;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.land-slogan{
+    font: $font-style;
+    color: $greyish-brown;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+.land-desc{
+    font: $font-style;
+    color: $greyish-brown-88;
+    font-size: 0.8rem;
+}
+.land-technologies{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.land-textTec{
+    font: $font-style-2;
+    font-size: 1rem;
+    color: $greyish-brown;
+}
+
+.land-iconWB{
+    width: 25px;
+    height: 25px;
+}
+
+
+.land-info-autor{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.land-img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    border-radius: 40%;
+    border: 3px solid black;
+}
+.land-image {
+    border-radius: 45%;
+    padding: 0.4rem 0 0 0.4rem;
+    width: 90%;
+    height: 90%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.land-job{
+    font: $font-style-2;
+    font-size: 1rem;
+    text-align: center;
+    color: $warm-grey;
+}
+.land-name{
+    font: $font-style-2;
+   font-size: 1.4rem;
+   text-align: center;
+   font-weight: bold;
+   color: $black-80;
+}
+
+.land-footer{
+    width: 100%;
+    background-color: $dark;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.land-copy{
+    font: $font-style-2;
+    font-size: 1rem;
+    color: $warm-grey;
+}
+
+
+@media (min-width: 769px) {
+    .land-header{
+        height: 30%;
+        padding: 2rem;
+    }
+       .landing-ul{
+        height: 60%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .land-autor{
+        width: 500px;
+    }
+    .land-footer{
+        height: 10%;
+        padding: 2rem;
+    }
+}

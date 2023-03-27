@@ -1,0 +1,222 @@
+/* Aquí van tus estilos */
+
+@import './variables.scss';
+
+  @media (min-width: 769px) {
+    .container {
+      background-color: $dark;
+      // height: 100vh;
+      padding: 1rem 2rem;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
+    
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 75px;
+  }
+  .header .text {
+    color: $white;
+  }
+  .logoCool {
+    width: 5rem;
+  }
+  .main {
+    display: flex;
+    padding-top: 10px;
+    height: fit-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .main .title {
+    color:$white;
+    text-align: center;
+  }
+  .main .ask-info {
+    text-align: center;
+    color: $white;
+  }
+  .main .ask-info .subtitle {
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+  }
+  .main .ask-info .line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+  .input-mvl {
+    width: 50%;
+  }
+  .main .form {
+    margin:0px;
+    background-color: $dark;
+    max-width: 35%;
+    padding: 20px;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .main .project,
+  .main .autor {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    gap:10px;
+  }
+  .main .input,
+  .textarea {
+    background-color: $dark;
+    border-color: $white;
+    border-radius: 30px;
+    height: 60px;
+    color: $white;
+    padding-left: 15px;
+    padding-top: 5px;
+    margin-bottom: 0.5rem;
+  }
+  .main .input::placeholder,
+  .textarea::placeholder {
+    color: $white;
+    padding-top: 10px;
+  }
+  .main .textarea {
+    height: 110px;
+  }
+  .main .buttons-img {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .main .btn,
+  .main .btn-large {
+    width: 160px;
+    margin-top: 10px;
+    color: $white;
+    text-align: center;
+    border: none;
+    height: 43px;
+    background: linear-gradient(90deg, #8176AF -1.57%, #C0B7E8 98.43%);;
+    border-radius: 40px;
+  }
+  .main .btn-large {
+    width: 200px;
+    border: solid 2px $white;
+  }
+  .main .preview {
+    padding: 0px 20px;
+    max-width: 60%;
+  }
+  .main .preview .image {
+    object-fit: cover;
+    width: 100%;
+    max-height: 80%;
+  }
+  .main .preview .autor {
+    background-color: $white;
+    color: #3E3E3E;
+    max-width: 75%;
+    height: fit-content;
+    transform: translateY(-150px);
+    margin: auto;
+    border-radius: 20px;
+    display: flex;
+    // flex-direction: row-reverse;
+    padding: 30px;
+    // overflow-y: scroll;
+  }
+  .info-autor {
+    width: 40%;
+    text-align: center;
+  }
+  .info-autor .image {
+    border-radius: 50%;
+    width: 80px;
+    height: 110px;
+  }
+  .info-autor .job {
+    font-weight: bold;
+    color: $black-80;
+    font-size: 14px;
+  }
+  .info-autor .name {
+    font-size: 16px;
+  }
+  .info-project {
+    width: 60%;
+  }
+  .info-project .subtitle {
+    font-size: 14px;
+    text-align: center;
+  }
+  .info-project .title {
+    font-size: 20px;
+    color: $black-80;
+    margin-bottom: 10px;
+  }
+  .info-project .desc {
+    font-size: 12px;
+    margin-bottom: 10px;
+    }
+  .info-project .slogan {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .info-project .line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(1, 1, 1, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+  .btn-color {
+    border-radius: 20px;
+    width: 85px;
+    height: 30px;
+    font-weight: bold;
+  }
+  .btn-color-dark {
+    background-color: $black-80;
+    color: $white;
+  }
+  .technologies {
+    background-color: lightgray;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 10px;
+    width: 70%;
+  }
+  .card {
+    color: $white;
+    text-align: center;
+    padding: 20px;
+  }
+  .hidden {
+    display: none;
+  }
+  .icon{
+    width: 16px;
+  }
+  .trash{
+
+    width: 3rem;
+  }
+}
+
