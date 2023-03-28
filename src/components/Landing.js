@@ -47,7 +47,8 @@ function Landing(props, setSavedCards) {
                     className="land-icon"
                     href={obj.repo}
                     title="repo"
-                    target="_blank"
+                    target="_blank" 
+                    rel='noreferrer'
                   >
                     <img
                       src={icongithub}
@@ -61,6 +62,7 @@ function Landing(props, setSavedCards) {
                     href={obj.demo}
                     title="demo"
                     target="_blank"
+                    rel='noreferrer'
                   >
                     <img
                       src={iconweb}
@@ -94,10 +96,11 @@ function Landing(props, setSavedCards) {
           </section>
           <img className="land-logoCool" src={station} alt="logo" />
         </div>
+
         <div className="land-header__text">
-          <h1 className="land-header__title">Cool Projects Station</h1>
+          <h1 className="land-header__title">Cool Project Station</h1>
           <h2 className="land-header__subtitle">
-            Escaparate en línea para recoger ideas a traves de la tecnología.
+            Escaparate en línea para recoger ideas a través de la tecnología.
           </h2>
           <form className="land-header__form">
             <button className="land-btnNew">
@@ -105,13 +108,9 @@ function Landing(props, setSavedCards) {
                 NUEVO PROYECTO
               </Link>
             </button>
-            <button className="land-btnSee">
-              <Link className="btnSeeTxt" to="/">
-                VER PROYECTOS
-              </Link>
-            </button>
           </form>
         </div>
+
       </header>
       <main className="land-main">
         <ul className="landing-ul">{renderLandingCard()}</ul>

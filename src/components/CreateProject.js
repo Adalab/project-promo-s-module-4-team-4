@@ -179,8 +179,8 @@ const CreateProject = ({ setSavedCards }) => {
               </section>
 
               <section className="card">
-                <span className={hidden ? 'hidden' : ''}>
-                  La tarjeta ha sido creada:
+                <span className={hidden ? 'hidden' : 'url_span'}>
+                 <p className="url_text">La tarjeta ha sido creada:</p> 
                   <a
                     href={url}
                     className="url_create"

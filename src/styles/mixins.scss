@@ -8,10 +8,9 @@
   
   .header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
   }
   .contHeader {
     display: flex;
@@ -317,3 +316,113 @@
   width: 3rem;
 }
 
+.landing {
+  background-color: $dark;
+}
+
+.land-header {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $dark;
+  color: $white;
+}
+
+.land-contHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.land-contHeader__oneSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.land-iconComputer {
+  width: 3rem;
+  height: 3rem;
+}
+
+.land-text {
+  font-size: 1.4rem;
+  font: $font-style;
+}
+
+.land-logoCool {
+  width: 4rem;
+  height: 4rem;
+}
+
+
+.land-header__title {
+  font: $font-style-2;
+  font-size: 4rem;
+  font-weight: bolder;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.land-header__subtitle {
+  font: $font-style;
+  font-size: 1.8rem;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+.land-header__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.land-btnNew {
+  display: block;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: .5rem;
+}
+
+.btnNewTxt {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.land-btnSee {
+  display: block;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: .5rem;
+  background-color: $dark-lilac;
+}
+
+.btnSeeTxt {
+  text-decoration: none;
+  color: $white;
+  font-size: 1rem;
+}
+
+.url_span{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.url_create {
+  color: limegreen;
+  font: $font-style;
+  font-size: 1rem;
+}
+
+.url_text{
+    font: $font-style;
+    font-size: 1rem;
+}
