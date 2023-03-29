@@ -1,5 +1,7 @@
-CREATE DATABASE cps;
-USE cps;
+-- CREATE DATABASE cps;
+-- USE cps;
+
+USE freedb_CoolProjectDb;
 
 CREATE TABLE project(
 idProject INT auto_increment primary key not null, 
