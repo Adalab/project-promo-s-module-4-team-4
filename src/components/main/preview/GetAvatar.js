@@ -5,7 +5,6 @@ import defaultAvatar from '../../../images/defaultAvatar.png';
 import '../../../styles/mixins.scss';
 import '../../../styles/App.scss';
 
-
 function GetAvatar(props) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
@@ -63,7 +62,7 @@ function GetAvatar(props) {
 
   const avatar = props.avatar === '' ? defaultAvatar : props.avatar;
   return (
-    <div className="buttons-img">
+    <div className={props.className}>
       <label className="btn">
         {props.value}
         <input

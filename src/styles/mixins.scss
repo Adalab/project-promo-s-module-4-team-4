@@ -8,7 +8,7 @@
   
   .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
@@ -32,8 +32,17 @@
   .logoCool {
     width: 3rem;
   }
+  .land-header {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $dark;
+    color: $white;
+}
   
   .main {
+    background-color: $dark;
     display: flex;
     flex-direction: column;
   }
@@ -128,12 +137,25 @@
   }
   
   .main .buttons-img {
-    text-align: center;
     display: flex;
     flex-direction: row;
+    justify-content:space-evenly;
     gap:1rem;
-    justify-content: center;
   }
+  
+  .btn-image{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+  }
+  .btn-photo{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+ 
+  }
+
+ 
   
   .main .btn,
   .main .btn-large {

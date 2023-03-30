@@ -14,8 +14,8 @@ function Card(props) {
         </h2>
         <p className="slogan">{props.data.slogan || 'Diseños Exclusivos'}</p>
         <p className="desc">
-          {props.data.desc ||
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, delectus? Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus aperiam,ullam culpa accusantium placeat odit corrupti ipsum! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, delectus? Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus aperiam,ullam culpa accusantium placeat odit corrupti ipsum!'}{' '}
+          {props.data.description ||
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, delectus? Voluptates at hic aliquam porro ad suscipit harum laboriosam saepe earum doloribus aperiam,ullam culpa accusantium placeat odit corrupti ipsum! Lorem, ipsum dolor sit amet consectetur adipisicing elit.!'}{' '}
         </p>
         <section className="technologies">
           <p className="text">

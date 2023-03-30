@@ -27,7 +27,7 @@ const CreateProject = ({ setSavedCards }) => {
       repo: '',
       demo: '',
       technologies: '',
-      desc: '',
+      description: '',
       autor: '',
       job: '',
       image:
@@ -54,7 +54,7 @@ const CreateProject = ({ setSavedCards }) => {
       repo: '',
       demo: '',
       technologies: '',
-      desc: '',
+      description: '',
       autor: '',
       job: '',
       image:
@@ -83,7 +83,7 @@ const CreateProject = ({ setSavedCards }) => {
       data.repo !== '' &&
       data.demo !== '' &&
       data.technologies !== '' &&
-      data.desc !== '' &&
+      data.description !== '' &&
       data.autor !== '' &&
       data.job !== ''
     ) {
@@ -103,7 +103,7 @@ const CreateProject = ({ setSavedCards }) => {
       data.repo === '' ||
       data.demo === '' ||
       data.technologies === '' ||
-      data.desc === '' ||
+      data.description === '' ||
       data.autor === '' ||
       data.job === '' ||
       data.image === '' ||
@@ -159,11 +159,13 @@ const CreateProject = ({ setSavedCards }) => {
 
               <section className="buttons-img">
                 <GetAvatar
+                  className={'btn-image'}
                   avatar={avatar}
                   updateAvatar={updateImage}
                   value={'Subir foto de autora'}
                 />
                 <GetAvatar
+                  className={'btn-photo'}
                   avatar={avatar}
                   updateAvatar={updatePhoto}
                   value={'Subir foto de proyecto'}
@@ -180,7 +182,7 @@ const CreateProject = ({ setSavedCards }) => {
 
               <section className="card">
                 <span className={hidden ? 'hidden' : 'url_span'}>
-                 <p className="url_text">La tarjeta ha sido creada:</p> 
+                  <p className="url_text">La tarjeta ha sido creada:</p>
                   <a
                     href={url}
                     className="url_create"
