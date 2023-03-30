@@ -39,7 +39,7 @@ const Preview = () => {
           <div className="profile">
             <img
               className="image"
-              src="https://coachready.com/dev/wp-content/uploads/2015/09/nuevo-mundo-del-trabajo.jpg"
+              src="https://media.istockphoto.com/id/185173155/es/vector/bombilla-hecho-de-iconos-de-la-educaci%C3%B3n-y-de-la-tecnolog%C3%ADa.jpg?s=612x612&w=0&k=20&c=gCQnDaW-mX1c0WiAhUI44ee7JrnjSiwvLgnGCBmx3KY="
               alt="photo_project"
             />
           </div>
