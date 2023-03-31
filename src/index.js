@@ -1,13 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
-import App from './components/App';
+const express = require ('express');
+const cors = require ('cors');
+const mysql = require ('mysql2/promise');
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <HashRouter>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-  </HashRouter>
-);
+let connection;
+mysql.createConnection({    
+    host: 'sql.freedb.tech',    
+    database: 'freedb_CoolProjectDb',
+    user: 'freedb_Cool Station Ladies',
+    password: 'Qff$XK3qwgSwr@s', })  
+    .then(connection => { 
+        connection.connect()      
+        .then(() => {
+            console.log('Conectado con el identificador ' + connection.threadId);})     
+            .catch((err) => {
+                console.error('Error de conexion: ' + err.stack);
+            }); 
+        })  .catch((err) => {
+            console.error('Error de configuración: ' + err.stack);
+        });
+
+const app = express();
+app.use(cors());
+app.use(express.json({limit:'10mb'}));
+const port = 4000;
+
+app.listen(port, ()=>{
+    console.log(`App listening on port ${port}`);
+});
+
+app.get("/dataApi/freedb_CoolProjectDb/all", (req, res)=>{
+    let sql = 'SELECT * FROM project, autor WHERE autor_idAutor = autor.idAutor'
+})
