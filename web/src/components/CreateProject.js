@@ -70,7 +70,7 @@ const CreateProject = ({ setSavedCards }) => {
 
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
-    api(data).then((info) => {
+    api.dataApi(data).then((info) => {
       setUrl(info.cardURL);
     });
     let regex = new RegExp(
