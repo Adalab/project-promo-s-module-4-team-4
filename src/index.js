@@ -3,6 +3,15 @@ const cors = require('cors');
 const mysql = require('mysql2/promise');
 
 let connection;
+const app = express();
+app.use(cors());
+app.use(express.json({ limit: '10mb' }));
+const port = 4000;
+
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
+});
+
 mysql
   .createConnection({
     host: 'sql.freedb.tech',
@@ -24,17 +33,9 @@ mysql
     console.error('Error de configuración: ' + err.stack);
   });
 
-const app = express();
-app.use(cors());
-app.use(express.json({ limit: '10mb' }));
-const port = 4000;
-
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`);
-});
 
 app.get('/dataApi/freedb_CoolProjectDb/all', (req, res) => {
-  let sql = 'SELECT * FROM project, autor WHERE autor_idAutor = autor.idAutor;';
+  let sql = 'SELECT * FROM project, autor WHERE project_fkidproject = autor.idAutor;';
   connection
     .query(sql)
     .then(([results, fields]) => {
