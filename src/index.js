@@ -3,12 +3,12 @@ const cors = require('cors');
 const mysql = require('mysql2/promise');
 
 let connection;
-const app = express();
-app.use(cors());
-app.use(express.json({ limit: '10mb' }));
+const server = express();
+server.use(cors());
+server.use(express.json({ limit: '10mb' }));
 const port = 4000;
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
 
@@ -19,7 +19,8 @@ mysql
     user: 'freedb_Cool Station Ladies',
     password: 'Qff$XK3qwgSwr@s',
   })
-  .then((connection) => {
+  .then((conn) => {
+    connection = conn;
     connection
       .connect()
       .then(() => {
@@ -34,8 +35,8 @@ mysql
   });
 
 
-app.get('/dataApi/freedb_CoolProjectDb/all', (req, res) => {
-  let sql = 'SELECT * FROM project, autor WHERE project_fkidproject = autor.idAutor;';
+server.get('/api/projects/all', (req, res) => {
+  let sql = 'SELECT * FROM project, autor WHERE project.fkidproject = autor.idAutor;';
   connection
     .query(sql)
     .then(([results, fields]) => {
