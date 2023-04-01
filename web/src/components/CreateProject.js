@@ -1,7 +1,6 @@
 import trash from '../images/icons8-basura-100.png';
-import { useState, useEffect } from 'react';
-import dataApi from '../service/api';
-import listProject from '../service/api';
+import { useState } from 'react';
+import api from '../service/api';
 import objectToExport from '../service/localstorege';
 import Header from './header/Header';
 import ImgProject from './main/preview/ImgProject';
@@ -39,12 +38,6 @@ const CreateProject = ({ setSavedCards }) => {
   );
   const savedCards = objectToExport.get('cards', []);
 
-  useEffect(()=>{
-    dataApi.listProjectApi().then(cleanData=>{
-      setSavedCards(cleanData);
-    });
-  }, []);
-
   const handleInput = (ev) => {
     objectToExport.set('dataLs', data);
     ev.preventDefault();
@@ -77,7 +70,7 @@ const CreateProject = ({ setSavedCards }) => {
 
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
-    dataApi(data).then((info) => {
+    api(data).then((info) => {
       setUrl(info.cardURL);
     });
     let regex = new RegExp(
