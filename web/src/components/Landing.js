@@ -7,13 +7,20 @@ import icongithub from '../images/iconogithub.png';
 import { Link, NavLink } from 'react-router-dom';
 import objectToExport from '../service/localstorege';
 import trash from '../images/icons8-basura-100.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import api from '../service/api';
 
 /* SECCIÓN DEL COMPONENTE */
 function Landing(props, setSavedCards) {
   const [cardProject, setCardProject] = useState(
     objectToExport.get('cards', [])
   );
+
+  useEffect(() => {
+    api.listProject().then((cleanData) => {
+      setCardProject(cleanData);
+    });
+  }, []);
 
   const handleTrashLi = (ev) => {
     cardProject.splice(ev.target.id, 1);
