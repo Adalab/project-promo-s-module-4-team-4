@@ -27,7 +27,7 @@ Hemos creado diferentes ficheros en los que ir trabajando:
 - La parte del **back-end** se encuentra en la carpeta src con su fichero correspondiente de js, donde por ahora solo tenemos entrelazada el servidor creado con el front-end.
 
 ### Herramientas utilizadas:
-- ZEPLIN mag_right
+- ZEPLIN
 - VISUAL STUDIO CODE (VSC)
 - HTML pushpin
 - CSS 
