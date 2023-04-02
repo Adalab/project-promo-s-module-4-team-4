@@ -9,6 +9,7 @@ const InputAuthor =(props)=>{
                   id="autor"
                   onChange={props.handleInput}
                   value={props.data.autor}
+                  required
                 />
                 <input
                   className="input"
@@ -18,6 +19,7 @@ const InputAuthor =(props)=>{
                   id="job"
                   onChange={props.handleInput}
                   value={props.data.job}
+                  required
                 />
               </fieldset>
     );

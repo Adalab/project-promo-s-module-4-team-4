@@ -62,9 +62,11 @@ const CreateProject = ({ setSavedCards }) => {
       photo:
         'https://media.istockphoto.com/id/185173155/es/vector/bombilla-hecho-de-iconos-de-la-educaci%C3%B3n-y-de-la-tecnolog%C3%ADa.jpg?s=612x612&w=0&k=20&c=gCQnDaW-mX1c0WiAhUI44ee7JrnjSiwvLgnGCBmx3KY=',
     });
+
     setHidden(true);
     setUrl('');
-
+    setMensjError(' ');
+    setMensjRepo('');
     objectToExport.remove('dataLs', data);
   };
 
@@ -110,7 +112,7 @@ const CreateProject = ({ setSavedCards }) => {
       data.photo === ''
     ) {
       setMensjRepo('');
-      setMensjError('Faltan datos por rellenar');
+      setMensjError('Debes rellenar todos los campos');
       setHidden(true);
     }
   };
@@ -192,7 +194,7 @@ const CreateProject = ({ setSavedCards }) => {
                     {url}
                   </a>
                 </span>
-                <span className="mnsj">{mensjError}</span>
+                <span className="mensj">{mensjError}</span>
 
                 <img
                   src={trash}

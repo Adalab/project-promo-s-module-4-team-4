@@ -67,6 +67,7 @@
     flex-direction: column;
     //justify-content: center;
     align-items: center;
+    margin-bottom: 1rem;
   }
   
   .main .ask-info .subtitle {
@@ -123,7 +124,7 @@
   }
   .main .input::placeholder,
   .textarea::placeholder {
-    color: $white;
+    color: $dark;
     font: $font;
     padding-top: 10px;
   }
@@ -468,4 +469,11 @@
 .url_text{
     font: $font-style;
     font-size: 1rem;
+}
+
+input:invalid:required {
+  background-image: linear-gradient(to right, rgb(220, 192, 255), rgb(244, 246, 244));
+}
+textarea:invalid:required {
+  background-image: linear-gradient(to right, rgb(220, 192, 255), rgb(255, 255, 255));
 }

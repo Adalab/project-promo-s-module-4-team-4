@@ -32,15 +32,16 @@ function Landing(props, setSavedCards) {
     return cardProject.map((obj, index) => {
       return (
         <li key={index} className="landing-li">
-          <NavLink className="return" to="/Preview">
-            <section className="land-autor autOne">
-              <img
+           <img
                 src={trash}
                 alt="trash"
                 onClick={handleTrashLi}
                 className="trashLi"
                 id={index}
-              />
+            />
+          <NavLink className="return" to="/Preview">
+            <section className="land-autor autOne">
+            
               <section className="land-info-project">
                 <p className="land-subtitle">Personal Project Card</p>
                 <hr className="land-line" />

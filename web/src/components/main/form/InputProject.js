@@ -19,6 +19,7 @@ const InputProject = (props) => {
         placeholder="Slogan"
         onChange={props.handleInput}
         value={props.data.slogan}
+        required
       />
       <div>
         <input
@@ -40,6 +41,7 @@ const InputProject = (props) => {
           id="demo"
           onChange={props.handleInput}
           value={props.data.demo}
+          required
         />
       </div>
       <span className="mensj">{props.mensjRepo}</span>
@@ -51,6 +53,7 @@ const InputProject = (props) => {
         id="technologies"
         onChange={props.handleInput}
         value={props.data.technologies}
+        required
       />
       <textarea
         className="textarea"
