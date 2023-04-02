@@ -410,11 +410,32 @@
   font-weight: bold;
   border-radius: 20px;
   padding: .5rem;
+  
 }
+.land-btnNewLand{
+  width: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: .5rem;
+ 
+}
+.fa-arrow-left:before{
+  
+  padding-right: 0.5rem;
 
+}
 .btnNewTxt {
   text-decoration: none;
   font-size: 1rem;
+}
+
+.btnNewLand{
+  text-decoration: none;
+  font-size: 1rem;
+
 }
 
 .land-btnSee {

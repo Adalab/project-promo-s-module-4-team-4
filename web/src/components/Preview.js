@@ -26,6 +26,12 @@ const Preview = () => {
             Escaparate en línea para recoger ideas a través de la tecnología.
           </h2>
           <form className="land-header__form">
+            <button className="land-btnNewLand">
+              <Link className="btnNewLand" to="/">
+                <i className="link-arrow fa-solid fa-arrow-left"></i>
+                PRINCIPAL
+              </Link>
+            </button>
             <button className="land-btnNew">
               <Link className="btnNewTxt" to="/CreateProject">
                 NUEVO PROYECTO
