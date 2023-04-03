@@ -30,15 +30,15 @@ Hemos creado diferentes ficheros en los que ir trabajando:
 
 ### Herramientas utilizadas: 🛠️
 
-☑ ZEPLIN
-☑ VISUAL STUDIO CODE (VSC)
-☑ HTML pushpin
-☑ CSS
-☑ SASS / SCSS
-☑ REACT
-☑ MYSQL WORKBENCH
-☑ GIT / GITHUB
-☑ GULP
+☑ ZEPLIN  
+☑ VISUAL STUDIO CODE (VSC)  
+☑ HTML pushpin  
+☑ CSS  
+☑ SASS / SCSS  
+☑ REACT  
+☑ MYSQL WORKBENCH  
+☑ GIT / GITHUB  
+☑ GULP  
 ☑ POSTMAN
 
 #### Miembros del equipo ✒️
