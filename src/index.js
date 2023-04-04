@@ -36,7 +36,7 @@ mysql
 
 
 server.get('/api/projects/all', (req, res) => {
-  let sql = 'SELECT * FROM project, autor WHERE project.fkidproject = autor.idAutor;';
+  let sql = 'SELECT * FROM project, autor WHERE project.fkIdAutor = autor.idAutor;';
   connection
     .query(sql)
     .then(([results, fields]) => {
@@ -50,4 +50,47 @@ server.get('/api/projects/all', (req, res) => {
     .catch((err) => {
       throw err;
     });
+});
+
+server.post('/api/projects/add' , (req , res) => {
+  const data = req.body;
+  //validaciones
+
+  let sqlAutor = 'INSERT INTO autor (autor, job, image) VALUES (?,?,?)';
+  let valueAutor = [
+    data.autor,
+    data.job,
+    data.image];
+    
+  let sqlProject = 'INSERT INTO (name, slogan, repo, demo, technologies, description, photo, fkIdAutor) VALUES (?,?,?,?,?,?,?,?)';
+  connection 
+  .query(sqlAutor , valueAutor)
+  .then (([results, fields]) => {
+    console.log(results);
+    let valuesProject = [
+      data.name,
+      data.slogan,
+      data.repo,
+      data.demo,
+      data.technologies,
+      data.description,
+      data.photo,
+      results.insertId
+    ];
+
+    connection
+    .query(sqlProject, valuesProject)
+    .then(([results, fields]) => {
+      let response = {
+        success: true,
+        cardURL: `http://localhost:4000/api/projects/${results.insertId}`
+      }
+      res.json(response);
+    })
+    .catch((err) => {
+      throw err;
+    });
+    
+    
+  })
 });
