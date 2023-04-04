@@ -6,7 +6,7 @@ const dataApi = (data) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      return data.url;
+      return data;
     });
 };
 

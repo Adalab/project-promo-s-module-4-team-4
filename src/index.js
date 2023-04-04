@@ -62,35 +62,38 @@ server.post('/api/projects/add' , (req , res) => {
     data.job,
     data.image];
     
-  let sqlProject = 'INSERT INTO (name, slogan, repo, demo, technologies, description, photo, fkIdAutor) VALUES (?,?,?,?,?,?,?,?)';
+  let sqlProject = 'INSERT INTO project (name, slogan, repo, demo, technologies, `description`, photo, fkIdAutor) VALUES (?,?,?,?,?,?,?,?)';
+
   connection 
-  .query(sqlAutor , valueAutor)
-  .then (([results, fields]) => {
-    console.log(results);
-    let valuesProject = [
-      data.name,
-      data.slogan,
-      data.repo,
-      data.demo,
-      data.technologies,
-      data.description,
-      data.photo,
-      results.insertId
-    ];
+    .query(sqlAutor , valueAutor)
+    .then (([results, fields]) => {
+      console.log(results);
+      let valuesProject = [
+        data.name,
+        data.slogan,
+        data.repo,
+        data.demo,
+        data.technologies,
+        data.description,
+        data.photo,
+        results.insertId
+      ];
 
     connection
-    .query(sqlProject, valuesProject)
-    .then(([results, fields]) => {
-      let response = {
-        success: true,
-        cardURL: `http://localhost:4000/api/projects/${results.insertId}`
-      }
-      res.json(response);
-    })
+      .query(sqlProject, valuesProject)
+      .then(([results, fields]) => {
+
+        let response = {
+          success: true,
+          cardURL: `http://localhost:4000/api/projects/${results.insertId}`
+        }
+        res.json(response);
+      })
     .catch((err) => {
       throw err;
     });
-    
-    
-  })
+   })
+   .catch((err) => {
+      throw err;
+  });
 });
