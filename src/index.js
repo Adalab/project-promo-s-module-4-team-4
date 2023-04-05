@@ -9,6 +9,7 @@ server.use(express.json({ limit: '10mb' }));
 const port = 4000;
 
 server.listen(port, () => {
+  server.set('view engine', 'ejs')
   console.log(`App listening on port ${port}`);
 });
 
@@ -139,3 +140,5 @@ server.post('/api/projects/add' , (req , res) => {
     }
   }  
 );
+
+server.use(express.static('./src/publish-react'));
