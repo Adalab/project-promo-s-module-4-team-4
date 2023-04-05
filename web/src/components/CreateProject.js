@@ -36,6 +36,8 @@ const CreateProject = ({ setSavedCards }) => {
         'https://media.istockphoto.com/id/185173155/es/vector/bombilla-hecho-de-iconos-de-la-educaci%C3%B3n-y-de-la-tecnolog%C3%ADa.jpg?s=612x612&w=0&k=20&c=gCQnDaW-mX1c0WiAhUI44ee7JrnjSiwvLgnGCBmx3KY=',
     })
   );
+    console.log(JSON.stringify(data));
+
   const savedCards = objectToExport.get('cards', []);
 
   const handleInput = (ev) => {
