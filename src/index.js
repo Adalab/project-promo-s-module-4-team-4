@@ -6,6 +6,7 @@ let connection;
 const server = express();
 server.use(cors());
 server.use(express.json({ limit: '10mb' }));
+server.set('view engine', 'ejs');
 const port = 4000;
 
 server.listen(port, () => {
@@ -141,4 +142,20 @@ server.post('/api/projects/add' , (req , res) => {
   }  
 );
 
-server.use(express.static('./src/publish-react'));
+server.get('/api/projects/detail/:projectID', (req, res) => {
+  const projectId = req.params.projectID;
+  const sql =
+    'SELECT * FROM project, autor WHERE project.fkIdAutor = autor.idAutor and idProject = ?';
+  connection
+    .query(sql, [projectId])
+    .then(([results, fields]) => {
+      console.log(projectId)
+      res.render("project_detail", results[0]);
+    })
+    .catch((err) => {
+      throw err;
+    });
+});
+
+
+server.use(express.static('./src/public-react'));
