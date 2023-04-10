@@ -13,3 +13,18 @@
     "static/js/main.b49e10cb.js"
   ]
 }
+{
+  "files": {
+    "main.css": "./static/css/main.bcb44886.css",
+    "main.js": "./static/js/main.3f5a502c.js",
+    "static/media/defaultAvatar.png": "./static/media/defaultAvatar.ce1db621b680ddbffa98.png",
+    "static/media/station.png": "./static/media/station.7b4f374c18673da2d0c7.png",
+    "index.html": "./index.html",
+    "main.bcb44886.css.map": "./static/css/main.bcb44886.css.map",
+    "main.3f5a502c.js.map": "./static/js/main.3f5a502c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bcb44886.css",
+    "static/js/main.3f5a502c.js"
+  ]
+}

@@ -10,7 +10,7 @@ server.set('view engine', 'ejs');
 const port = 4000;
 
 server.listen(port, () => {
-  server.set('view engine', 'ejs')
+  server.set('view engine', 'ejs');
   console.log(`App listening on port ${port}`);
 });
 
@@ -36,9 +36,9 @@ mysql
     console.error('Error de configuración: ' + err.stack);
   });
 
-
 server.get('/api/projects/all', (req, res) => {
-  let sql = 'SELECT * FROM project, autor WHERE project.fkIdAutor = autor.idAutor;';
+  let sql =
+    'SELECT * FROM project, autor WHERE project.fkIdAutor = autor.idAutor;';
   connection
     .query(sql)
     .then(([results, fields]) => {
@@ -54,61 +54,60 @@ server.get('/api/projects/all', (req, res) => {
     });
 });
 
-server.post('/api/projects/add' , (req , res) => {
+server.post('/api/projects/add', (req, res) => {
   const data = req.body;
 
-  if(data.autor === ''){
+  if (data.autor === '') {
     res.json({
       success: false,
-      error: 'Campo autor vacío'
-      })
-  }else if(data.job === ''){
+      error: 'Campo autor vacío',
+    });
+  } else if (data.job === '') {
     res.json({
       success: false,
-      error: 'Campo trabajo vacío'
-      })
-  } if(data.name === ''){
+      error: 'Campo trabajo vacío',
+    });
+  }
+  if (data.name === '') {
     res.json({
-    success: false,
-    error: 'Campo nombre de proyecto vacío'
-    })
-  }else if(data.slogan === ''){
+      success: false,
+      error: 'Campo nombre de proyecto vacío',
+    });
+  } else if (data.slogan === '') {
     res.json({
-    success: false,
-    error: 'Campo slogan vacío'
-    })
-  }else if(data.repo === ''){
+      success: false,
+      error: 'Campo slogan vacío',
+    });
+  } else if (data.repo === '') {
     res.json({
-    success: false,
-    error: 'Campo repo vacío'
-    })
-  }else if(data.demo === ''){
+      success: false,
+      error: 'Campo repo vacío',
+    });
+  } else if (data.demo === '') {
     res.json({
-    success: false,
-    error: 'Campo demo vacío'
-    })
-  }else if(data.technologies === ''){
+      success: false,
+      error: 'Campo demo vacío',
+    });
+  } else if (data.technologies === '') {
     res.json({
-    success: false,
-    error: 'Campo technologies vacío'
-    })
-  }else if(data.description === ''){
+      success: false,
+      error: 'Campo technologies vacío',
+    });
+  } else if (data.description === '') {
     res.json({
-    success: false,
-    error: 'Campo decripción vacío'
-    })
-  }else{
+      success: false,
+      error: 'Campo decripción vacío',
+    });
+  } else {
     let sqlAutor = 'INSERT INTO autor (autor, job, image) VALUES (?,?,?)';
-    let valueAutor = [
-      data.autor,
-      data.job,
-      data.image];
-      
-    let sqlProject = 'INSERT INTO project (name, slogan, repo, demo, technologies, `description`, photo, fkIdAutor) VALUES (?,?,?,?,?,?,?,?)';
+    let valueAutor = [data.autor, data.job, data.image];
 
-    connection 
-      .query(sqlAutor , valueAutor)
-      .then (([results, fields]) => {
+    let sqlProject =
+      'INSERT INTO project (name, slogan, repo, demo, technologies, `description`, photo, fkIdAutor) VALUES (?,?,?,?,?,?,?,?)';
+
+    connection
+      .query(sqlAutor, valueAutor)
+      .then(([results, fields]) => {
         console.log(results);
         let valuesProject = [
           data.name,
@@ -118,29 +117,42 @@ server.post('/api/projects/add' , (req , res) => {
           data.technologies,
           data.description,
           data.photo,
-          results.insertId
+          results.insertId,
         ];
 
-      connection
-        .query(sqlProject, valuesProject)
-        .then(([results, fields]) => {
-
-          let response = {
-            success: true,
-            cardURL: `http://localhost:4000/api/projects/${results.insertId}`
-          }
-          res.json(response);
-        })
+        connection
+          .query(sqlProject, valuesProject)
+          .then(([results, fields]) => {
+            let response = {
+              success: true,
+              cardURL: `http://localhost:4000/api/projects/${results.insertId}`,
+            };
+            res.json(response);
+          })
+          .catch((err) => {
+            throw err;
+          });
+      })
       .catch((err) => {
         throw err;
       });
+  }
+});
+
+server.get('/api/projects/detail/:projectID', (req, res) => {
+  const projectId = req.params.projectID;
+  const sql =
+    'SELECT * FROM project, autor WHERE project.fkIdAutor = autor.idAutor AND idprojects = ?';
+
+  connection
+    .query(sql, [projectId])
+    .then(([results, fields]) => {
+      res.render('project_details', results[0]);
     })
     .catch((err) => {
-        throw err;
+      throw err;
     });
-    }
-  }  
-);
+});
 
 server.get('/api/projects/detail/:projectID', (req, res) => {
   const projectId = req.params.projectID;
