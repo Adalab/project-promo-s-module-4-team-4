@@ -2,12 +2,19 @@ const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger.json');
+
+
 let connection;
 const server = express();
 server.use(cors());
 server.use(express.json({ limit: '10mb' }));
+const port = process.env.PORT || 4000;
 server.set('view engine', 'ejs');
-const port = 4000;
+
+//Especificar en el server use
+server.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 server.listen(port, () => {
   server.set('view engine', 'ejs');
@@ -171,3 +178,4 @@ server.get('/api/projects/detail/:projectID', (req, res) => {
 
 
 server.use(express.static('./src/public-react'));
+server.use(express.static('./src/public.css'));

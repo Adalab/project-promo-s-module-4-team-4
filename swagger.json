@@ -1,0 +1,98 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Cool Project Station",
+    "description": "My User Project Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:4000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Cool Project Station",
+      "description": "API CRUD para proyectos molones"
+    }
+  ],
+
+  "paths": {
+    "/api/projects/add": {
+      "post": {
+        "tags": ["Personal Project Card"],
+        "description": "Crear un nuevo proyecto con toda su info",
+        "parameters": [
+          {
+            "autor": "autor",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "job": "job",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "image": "image",
+            "in": "body",
+            "type": "string"
+          },
+          {
+            "photo": "photo",
+            "in": "body",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "slogan": "slogan",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "repo": "repo",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "demo": "demo",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "technologies": "technologies",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "description",
+            "in": "body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"]
+}
