@@ -14,7 +14,7 @@ import GetAvatar from './main/preview/GetAvatar';
 import '../styles/mixins.scss';
 import '../styles/App.scss';
 
-const CreateProject = ({ setSavedCards }) => {
+const CreateProject = ({ setSavedCards, obj }) => {
   const [mensjRepo, setMensjRepo] = useState('');
   const [mensjError, setMensjError] = useState('');
   const [url, setUrl] = useState('');
@@ -36,7 +36,7 @@ const CreateProject = ({ setSavedCards }) => {
         'https://media.istockphoto.com/id/185173155/es/vector/bombilla-hecho-de-iconos-de-la-educaci%C3%B3n-y-de-la-tecnolog%C3%ADa.jpg?s=612x612&w=0&k=20&c=gCQnDaW-mX1c0WiAhUI44ee7JrnjSiwvLgnGCBmx3KY=',
     })
   );
-    console.log(JSON.stringify(data));
+  console.log(JSON.stringify(data));
 
   const savedCards = objectToExport.get('cards', []);
 
@@ -188,7 +188,7 @@ const CreateProject = ({ setSavedCards }) => {
                 <span className={hidden ? 'hidden' : 'url_span'}>
                   <p className="url_text">La tarjeta ha sido creada:</p>
                   <a
-                    href={url}
+                    href={`//localhost:4000/api/projects/detail/${obj.idProject}`}
                     className="url_create"
                     target="_blank"
                     rel="noreferrer"
