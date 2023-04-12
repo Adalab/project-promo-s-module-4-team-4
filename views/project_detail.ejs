@@ -8,96 +8,96 @@
     <title>Document</title>
 </head>
 <body>
-     <header className="land-header">
-        <div className="land-contHeader">
-          <section className="land-contHeader__oneSection">
-            <img className="land-iconComputer" src={iconComputer} alt="icono" />
-            <p className="land-text">Cool Project Station</p>
+     <header class="land-header">
+        <div class="land-contHeader">
+          <section class="land-contHeader__oneSection">
+            <img class="land-iconComputer" src='/images/iconoComp.png' alt="icono" />
+            <p class="land-text">Cool Project Station</p>
           </section>
-          <img className="land-logoCool" src={station} alt="logo" />
+          <img class="land-logoCool" src='/images/station.png' alt="logo" />
         </div>
 
-        <div className="land-header__text">
-          <h1 className="land-header__title"><Cool Project Station></h1>
-          <h2 className="land-header__subtitle">
+        <div class="land-header__text">
+          <h1 class="land-header__title"><Cool Project Station></h1>
+          <h2 class="land-header__subtitle">
             Escaparate en línea para recoger ideas a través de la tecnología.
           </h2>
-          <form className="land-header__form">
-            <button className="land-btnNewLand">
-              <Link className="btnNewLand" to="/">
-                <i className="link-arrow fa-solid fa-arrow-left"></i>
+          <form class="land-header__form">
+            <button class="land-btnNewLand">
+              <a class="btnNewLand" href="/">
+                <i class="link-arrow fa-solid fa-arrow-left"></i>
                 PRINCIPAL
-              </Link>
+              </a>
             </button>
-            <button className="land-btnNew">
-              <Link className="btnNewTxt" to="/CreateProject">
+            <button class="land-btnNew">
+              <a class="btnNewTxt" href="/CreateProject">
                 NUEVO PROYECTO
-              </Link>
+              </a>
             </button>
           </form>
         </div>
       </header>
-      <main className="main">
-        <section className="preview">
-          <div className="profile">
+      <main class="main">
+        <section class="preview">
+          <div class="profile">
             <img
-              className="image"
+              class="image"
               src="<%= photo %>"
               alt="photo_project"
             />
           </div>
-          <section className="autor">
-            <section className="info-project">
-              <p className="subtitle">Personal Project Card</p>
-              <hr className="line" />
+          <section class="autor">
+            <section class="info-project">
+              <p class="subtitle">Personal Project Card</p>
+              <hr class="line" />
 
-              <h2 className="title-preview"><%= name %></h2>
-              <p className="slogan"><%= slogan %></p>
-              <p className="desc">
+              <h2 class="title-preview"><%= name %></h2>
+              <p class="slogan"><%= slogan %></p>
+              <p class="desc">
                 <%= description %>
               </p>
-              <section className="technologies">
-                <p className="text"><%= technologies %></p>
-                <div className="div_icon">
-                  <a href="./" target="_blank">
+              <section class="technologies">
+                <p class="text"><%= technologies %></p>
+                <div class="div_icon">
+                  <a href="<%= repo %>" target="_blank">
                     <img
-                      src="<%= repo %>"
+                      src='/images/iconogithub.png'
                       title="enlace a repositorio"
                       alt="icono repositorio"
-                      className="icon"
+                      class="icon"
                     />
                   </a>
-                  <a href="./" target="_blank">
+                  <a href="<%= demo %>" target="_blank">
                     <img
-                      src="<%= demo %>"
+                      src='/images/iconoweb.png'
                       title="enlace a web"
                       alt="icono web"
-                      className="icon"
+                      class="icon"
                     />
                   </a>
                 </div>
               </section>
             </section>
 
-            <section className="info-autor">
-              <div className="img">
-                <div className="profile">
+            <section class="info-autor">
+              <div class="img">
+                <div class="profile">
                   <img
-                    className="img"
+                    class="img"
                     src="<%= image %>"
                     alt="img"
                   ></img>
                 </div>
               </div>
-              <p className="job"> <%= job %></p>
-              <p className="name"> <%= autor %></p>
+              <p class="job"> <%= job %></p>
+              <p class="name"> <%= autor %></p>
             </section>
           </section>
         </section>
       </main>
-      <footer className="land-footer">
-        <img className="land-logoCool" src={station} alt="icono" />
-        <span className="land-copy">&copy Module-3: Project Team 4</span>
+      <footer class="land-footer">
+        <img class="land-logoCool" src='/images/station.png' alt="icono" />
+        <span class="land-copy">&copy Module-3: Project Team 4</span>
       </footer>
 </body>
 </html>

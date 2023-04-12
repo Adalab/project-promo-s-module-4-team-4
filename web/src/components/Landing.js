@@ -4,7 +4,7 @@ import station from '../images/station.png';
 import iconComputer from '../images/iconoComp.png';
 import iconweb from '../images/iconoweb.png';
 import icongithub from '../images/iconogithub.png';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import objectToExport from '../service/localstorege';
 import trash from '../images/icons8-basura-100.png';
 import { useState, useEffect } from 'react';
@@ -39,7 +39,7 @@ function Landing(props, setSavedCards) {
                 className="trashLi"
                 id={index}
             />
-          <NavLink className="return" to="/Preview">
+          <a className="return" href={`//localhost:4000/api/projects/detail/${obj.idProject}`}>
             <section className="land-autor autOne">
             
               <section className="land-info-project">
@@ -90,7 +90,7 @@ function Landing(props, setSavedCards) {
                 <p className="land-name">{obj.autor}</p>
               </section>
             </section>
-          </NavLink>
+          </a>
         </li>
       );
     });
