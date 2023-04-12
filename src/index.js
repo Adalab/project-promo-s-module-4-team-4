@@ -146,20 +146,20 @@ server.post('/api/projects/add', (req, res) => {
   }
 });
 
-server.get('/api/projects/detail/:projectID', (req, res) => {
-  const projectId = req.params.projectID;
-  const sql =
-    'SELECT * FROM project, autor WHERE project.fkIdAutor = autor.idAutor AND idprojects = ?';
+// server.get('/api/projects/detail/:projectID', (req, res) => {
+//   const projectId = req.params.projectID;
+//   const sql =
+//     'SELECT * FROM project, autor WHERE project.fkIdAutor = autor.idAutor AND idprojects = ?';
 
-  connection
-    .query(sql, [projectId])
-    .then(([results, fields]) => {
-      res.render('project_details', results[0]);
-    })
-    .catch((err) => {
-      throw err;
-    });
-});
+//   connection
+//     .query(sql, [projectId])
+//     .then(([results, fields]) => {
+//       res.render('project_detail', results[0]);
+//     })
+//     .catch((err) => {
+//       throw err;
+//     });
+// });
 
 server.get('/api/projects/detail/:projectID', (req, res) => {
   const projectId = req.params.projectID;
@@ -178,4 +178,4 @@ server.get('/api/projects/detail/:projectID', (req, res) => {
 
 
 server.use(express.static('./src/public-react'));
-server.use(express.static('./src/public.css'));
+server.use(express.static('./src/public-css'));
