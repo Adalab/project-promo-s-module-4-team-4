@@ -132,7 +132,7 @@ server.post('/api/projects/add', (req, res) => {
           .then(([results, fields]) => {
             let response = {
               success: true,
-              cardURL: `https://project-cool-station.onrender.com/api/projects/${results.insertId}`,
+              cardURL: `http://localhost:4000/api/projects/${results.insertId}`,
             };
             res.json(response);
           })

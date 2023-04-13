@@ -1,5 +1,5 @@
 const dataApi = (data) => {
-  return fetch('https://project-cool-station.onrender.com/api/projects/add', {
+  return fetch('http://localhost:4000/api/projects/add', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: { 'Content-type': 'application/json' },
@@ -11,7 +11,7 @@ const dataApi = (data) => {
 };
 
 const listProject = () => {
-  return fetch('https://project-cool-station.onrender.com/api/projects/all')
+  return fetch('http://localhost:4000/api/projects/all')
     .then((response) => response.json())
     .then((data) => {
       return data;

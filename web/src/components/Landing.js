@@ -39,7 +39,7 @@ function Landing(props, setSavedCards) {
                 className="trashLi"
                 id={index}
             />
-          <a className="return" href={`/api/projects/detail/${obj.idProject}`}>
+          <a className="return" href={`//localhost:4000/api/projects/detail/${obj.idProject}`}>
             <section className="land-autor autOne">
             
               <section className="land-info-project">
