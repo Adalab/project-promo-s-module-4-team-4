@@ -18,6 +18,20 @@ const listProject = () => {
     });
 };
 
-const api = { dataApi, listProject };
+const deleteOneCard = (params) => {
+  return fetch(
+    `https://https://project-cool-station.onrender.com/api/projects/delete_one/${params}`,
+    {
+      method: 'DELETE',
+      headers: { 'Content-type': 'application/json' },
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      return data;
+    });
+};
+
+const api = { dataApi, listProject, deleteOneCard };
 
 export default api;

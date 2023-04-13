@@ -14,7 +14,8 @@ import GetAvatar from './main/preview/GetAvatar';
 import '../styles/mixins.scss';
 import '../styles/App.scss';
 
-const CreateProject = ({ setSavedCards, obj }) => {
+const CreateProject = ({ obj }) => {
+  const [savedCards, setSavedCards] = useState([]);
   const [mensjRepo, setMensjRepo] = useState('');
   const [mensjError, setMensjError] = useState('');
   const [url, setUrl] = useState('');
@@ -38,7 +39,7 @@ const CreateProject = ({ setSavedCards, obj }) => {
   );
   console.log(JSON.stringify(data));
 
-  const savedCards = objectToExport.get('cards', []);
+  //const savedCards = objectToExport.get('cards', []);
 
   const handleInput = (ev) => {
     objectToExport.set('dataLs', data);

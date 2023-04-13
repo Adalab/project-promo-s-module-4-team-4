@@ -6,7 +6,7 @@
     "description": "My User Project Application API"
     
   },
-  "host": "localhost:4000",
+  "host": "https://project-cool-station.onrender.com",
   "basePath": "/",
   "tags": [
     {
@@ -80,9 +80,83 @@
             "type": "string"
           }
         ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
-            "description": "OK"
+            "success": "https://project-cool-station.onrender.com/api/projects/detail/${results.insertId}"
+          
+        }
+      }
+    }
+  },
+  "/api/projects/all": {
+    "get": {
+      "tags": ["projects"],
+      "summary": "Get all data for the projects",
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+          }
+        }
+      }
+    }
+  },
+  "/api/projects/detail/:projectID": {
+    "get": {
+      "tags": ["projects detail"],
+       "parameters": [
+        {
+          "name": "projectId",
+          "in": "path",
+          "required": true,
+          "description": "ID of project that we want to find",
+          "type": "integer"
+        }
+      ],
+      "summary": "Get detail data for one project by projectID ",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              
+            }
+          }
+        }
+      }
+    },
+    "/api/projects/delete_all": {
+      "delete": {
+        "tags": ["projects"],
+        "summary": "Delete all projects in database",
+        "responses": {
+          "200": {
+            "description": "All projects are deleted",
+            "schema": {
+              
+            }
+          }
+        }
+      }
+    },
+    "/api/projects/delete_one/:idCard": {
+      "delete": {
+        "tags": ["projects"],
+        "parameters": [
+          {
+            "name": "idCard",
+            "in": "path",
+            "required": true,
+            "description": "ID of card that we want to find to delete",
+            "type": "integer"
+          }
+        ],
+        "summary": "Delete project with given ID",
+        "responses": {
+          "200": {
+            "description": "Project is deleted",
+            "schema": {
+            }
           }
         }
       }

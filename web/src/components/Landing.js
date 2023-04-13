@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 import api from '../service/api';
 
 /* SECCIÓN DEL COMPONENTE */
-function Landing(props, setSavedCards) {
+function Landing(data, setData) {
   const [cardProject, setCardProject] = useState(
     objectToExport.get('cards', [])
   );
@@ -22,26 +22,37 @@ function Landing(props, setSavedCards) {
     });
   }, []);
 
-  const handleTrashLi = (ev) => {
-    cardProject.splice(ev.target.id, 1);
+  /*const handleTrashLi = (ev) => {
+    const fkAutor = ev.currentTarget.id;
+    const newArray = [...data];
+    api.deleteOneCard(fkAutor).then((message) => {
+      console.log(message);
+      const position = newArray.findIndex((el) => el.fkAutor === fkAutor);
+      newArray.splice(position, 1);
+      setData(newArray);
+      // ls.remove('dataCardLS');
+    });
+    console.log('Click!!');
+  };*/
+
+  /*cardProject.splice(ev.target.id, 1);
     objectToExport.set('cards', cardProject);
     setCardProject([...cardProject]);
-  };
+  });*/
 
   const renderLandingCard = () => {
     return cardProject.map((obj, index) => {
       return (
         <li key={index} className="landing-li">
-           <img
-                src={trash}
-                alt="trash"
-                onClick={handleTrashLi}
-                className="trashLi"
-                id={index}
-            />
+          <img
+            src={trash}
+            alt="trash"
+            //onClick={handleTrashLi}
+            className="trashLi"
+            id={obj.fkIdAutor}
+          />
           <a className="return" href={`/api/projects/detail/${obj.idProject}`}>
             <section className="land-autor autOne">
-            
               <section className="land-info-project">
                 <p className="land-subtitle">Personal Project Card</p>
                 <hr className="land-line" />
