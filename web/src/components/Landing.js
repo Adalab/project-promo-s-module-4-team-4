@@ -125,7 +125,7 @@ function Landing(props, setSavedCards) {
       </main>
       <footer className="land-footer">
         <img className="land-logoCool" src={station} alt="icono" />
-        <span className="land-copy">&copy Module-4: Project Team 4</span>
+        <span className="land-copy">masocas sin fronteras</span>
       </footer>
     </div>
   );
