@@ -53,7 +53,7 @@ function Landing(data, setData) {
           />
           <a
             className="return"
-            href={`//localhost:4000/api/projects/detail/${obj.idProject}`}
+            href={`https://project-cool-station.onrender.com/api/projects/detail/${obj.idProject}`}
           >
             <section className="land-autor autOne">
               <section className="land-info-project">
