@@ -49,9 +49,12 @@ function Landing(data, setData) {
             alt="trash"
             //onClick={handleTrashLi}
             className="trashLi"
-            id={obj.fkIdAutor}
+            id={index}
           />
-          <a className="return" href={`/api/projects/detail/${obj.idProject}`}>
+          <a
+            className="return"
+            href={`//localhost:4000/api/projects/detail/${obj.idProject}`}
+          >
             <section className="land-autor autOne">
               <section className="land-info-project">
                 <p className="land-subtitle">Personal Project Card</p>
@@ -136,7 +139,7 @@ function Landing(data, setData) {
       </main>
       <footer className="land-footer">
         <img className="land-logoCool" src={station} alt="icono" />
-        <span className="land-copy">&copy Module-3: Project Team 4</span>
+        <span className="land-copy">masocas sin fronteras</span>
       </footer>
     </div>
   );

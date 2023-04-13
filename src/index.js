@@ -99,23 +99,37 @@ server.post('/api/projects/add', async (req, res) => {
     let sqlProject =
       'INSERT INTO project (name, slogan, repo, demo, technologies, `description`, photo, fkIdAutor) VALUES (?,?,?,?,?,?,?,?)';
 
-    let valueProject = [
-      data.name,
-      data.slogan,
-      data.repo,
-      data.demo,
-      data.technologies,
-      data.description,
-      data.photo,
-      results.insertId,
-    ];
-    const [resultsInsert] = await connection.query(sqlProject, valueProject);
-    let response = {
-      success: true,
-      cardURL: `https://project-cool-station.onrender.com/api/projects/detail/${resultsInsert.insertId}`,
-    };
-    res.json(response);
-    connection.end();
+    connection
+      .query(sqlAutor, valueAutor)
+      .then(([results, fields]) => {
+        console.log(results);
+        let valuesProject = [
+          data.name,
+          data.slogan,
+          data.repo,
+          data.demo,
+          data.technologies,
+          data.description,
+          data.photo,
+          results.insertId,
+        ];
+
+        connection
+          .query(sqlProject, valuesProject)
+          .then(([results, fields]) => {
+            let response = {
+              success: true,
+              cardURL: `https://project-cool-station.onrender.com/api/projects/${results.insertId}`,
+            };
+            res.json(response);
+          })
+          .catch((err) => {
+            throw err;
+          });
+      })
+      .catch((err) => {
+        throw err;
+      });
   }
 });
 
