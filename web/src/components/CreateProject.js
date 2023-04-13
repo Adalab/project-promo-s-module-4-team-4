@@ -188,7 +188,7 @@ const CreateProject = ({ setSavedCards, obj }) => {
                 <span className={hidden ? 'hidden' : 'url_span'}>
                   <p className="url_text">La tarjeta ha sido creada:</p>
                   <a
-                    href={`https://project-cool-station.onrender.com/api/projects/detail/${obj.idProject}`}
+                    href={`/api/projects/detail/${obj.idProject}`}
                     className="url_create"
                     target="_blank"
                     rel="noreferrer"
