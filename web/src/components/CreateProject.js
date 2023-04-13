@@ -209,7 +209,7 @@ const CreateProject = ({ setSavedCards, obj }) => {
           </main>
           <footer className="land-footer">
             <img className="land-logoCool" src={station} alt="icono" />
-            <span className="land-copy">&copy Module-3: Project Team 4</span>
+            <span className="land-copy">&copy Module-4: Project Team 4</span>
           </footer>
         </div>
       }
